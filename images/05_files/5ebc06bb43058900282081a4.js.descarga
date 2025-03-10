@@ -1,0 +1,155 @@
+
+window.Cliengo = {}; //all Cliengo configs, functions and params goes into this object
+
+window.Cliengo.chatConfig = {
+  "companyId" : "5ebc06932e86cb002aca9ed6",
+  "websiteId" : "5ebc06bb43058900282081a4",
+  "whiteLabelId" : "5887b6ace4b024af6948b5fe",
+  "whiteLabelName" : "",
+  "googleAdWordsConversionId" : "",
+  "googleAnalyticsId" : "",
+  "chatbotName" : "Pilar",
+
+    "phone" : "",
+  "title": "https://www.casasvillasxaltipa.com/",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjoxLCJjb21wYW55IjoiNWViYzA2YmI0MzA1ODkwMDI4MjA4MWE0NWViYzA2OTMyZTg2Y2IwMDJhY2E5ZWQ2IiwidGltZXN0YW1wIjoxNzQxNTQ2MjUxNTg2fQ.6JNr8lNUUixpd9OEe6wFM9hurQo1b-UlK7_JLedQqSA",
+  "businessHoursConfiguration" : {"enabled_channels":{"CHATBOT":false,"WHATSAPP":false},"initial_message":"Hola, en este momento nuestros agentes no se encuentran conectados, puedes dejarnos tus datos y te contactarán en la mayor brevedad.","time_zone":"-6:00"},
+  "conversionPixels" : "<!-- Global site tag (gtag.js) - Google Ads: 635484335 -->\r\n<script async src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=AW-635484335\"><\/script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'AW-635484335');\r\n<\/script>\r\n<!-- Event snippet for Cliengo conversion page -->\r\n<script>\r\n  gtag('event', 'conversion', {'send_to': 'AW-635484335\/aQbHCP2vq9ABEK_xgq8C'});\r\n<\/script>\r\n",
+  "customFeedbackImageUrl" : "",
+  "widgetIcon" : "CLIENGO_ORIGINAL",
+   "widgetStyle" : "ICON",
+  "chatWindowColor" : "#a74c0e",
+  "cliengoMeetings" : "false",
+  "chatWindowTitle" : "Chat de ventas",
+  "chatWindowInputPlaceholder" : "Escribe un mensaje...",
+  "chatInitialMessage" : "<p class=\"editor-paragraph\"><span>Hola, estoy conectada, de qué modo te puedo ayudar? Recuerda que para estos desarrollos necesitamos que tengas ingresos mínimo desde los $45,000<\/span><\/p>[[Asesor, Agendar Cita, Otra duda]]",
+  "chatIsWritingMessage" : " está escribiendo...",
+  "chatSaluteTimeInSeconds" : 5,
+  "avatarImgUrl": "",
+  "labs":{
+      },
+  "companyLabs": "reports_beta,cvanalysis,gads_configuration_2023",
+  "planType": "CLIENGO_FULL",
+  "vertical": "REAL_ESTATE",
+    "formHooksEnabled" : false,
+  "automaticRemarketingEnabled" : true,
+  "chatEnabled" : true,
+        "poweredBy":{
+          "text": "Usamos Cliengo ",
+          "link": "https://www.cliengo.com/a/publicidadenbuscadores?utm_source=usamos_cliengo&utm_medium=chat",
+          "img":  "https://res.cloudinary.com/hbrrdozyj/image/upload/v1603736815/Usamos-Cliengo_knac91.png"
+      },
+    "customPoweredByUtms": "",
+  "softDisable": false,
+  "hasConvertedLead" : false,   "CDN_URL_DOMAIN" : "//d47r8x2gwo1do.cloudfront.net",
+        "WS_CHATBOT_URL" : "wss://chatbot.cliengo.com",
+      "sessionPath" : "/s/5ebc06932e86cb002aca9ed6/5ebc06bb43058900282081a4",
+  "cacheVersion" : "1438-07062065",
+  "debug" : false,
+  "whatsAppActive": true,
+  "lang" : "es",
+  "widgetVersion" : "2.0",
+  "type": "EXTERNAL",
+  "redirectToWPLite": false
+}
+
+
+var host = 'https://lw.cliengo.com';
+
+var mainClgoScriptId = 'mainclgo';
+var mainWspScriptId = 'mainWsp';
+var mainclgoScriptExists = document.querySelector('script[id="' + mainClgoScriptId + '"]');
+
+loadMain();
+
+function loadMain() {
+  if(mainclgoScriptExists) {
+    console.warn('Cuidado! ya existe un script con id "' + mainClgoScriptId + '", ' +
+      'probablemente el script del chat este duplicado en ese sitio!');
+    return;
+  }
+
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.id = mainClgoScriptId;
+  s.src = host + '/mainclgo.bundle.js';
+  s.setAttribute('data-company-id', '5ebc06932e86cb002aca9ed6');
+  s.setAttribute('data-source-id', '5ebc06bb43058900282081a4');
+  s.setAttribute('data-host', host);
+  s.async = true;
+  document.body.appendChild(s);
+  console.debug('clgo loaded');
+
+  loadWhatsAppWidget();
+}
+
+function onCommonsLoad() {
+  console.log(commonsClgoScriptId + ' script loaded successfuly.');
+  loadMain();
+}
+
+// WhatsApp functions
+function setwhatsappConfig() {
+      window.ldkWSP = {};
+    ldkWSP.widget_color = "#075E54";
+    ldkWSP.widget_message = "Chatea con nosotros";
+    ldkWSP.conversionPixelHtml = "<!-- Global site tag (gtag.js) - Google Ads: 635484335 -->\r\n<script async src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=AW-635484335\"><\/script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'AW-635484335');\r\n<\/script>\r\n<!-- Event snippet for Cliengo conversion page -->\r\n<script>\r\n  gtag('event', 'conversion', {'send_to': 'AW-635484335\/aQbHCP2vq9ABEK_xgq8C'});\r\n<\/script>\r\n";
+    ldkWSP.position = "";
+    ldkWSP.phone = "+525550599526";
+    ldkWSP.desktop_version = "BUBBLE";
+    ldkWSP.lang = "es";
+    ldkWSP.businessHoursConfiguration = {"enabled_channels":{"CHATBOT":false,"WHATSAPP":false},"initial_message":"Hola, en este momento nuestros agentes no se encuentran conectados, puedes dejarnos tus datos y te contactarán en la mayor brevedad.","time_zone":"-6:00"},
+    ldkWSP.company_id = "5ebc06932e86cb002aca9ed6";
+    ldkWSP.website_id = "5ebc06bb43058900282081a4";
+    ldkWSP.disable_powered_by = "" === "true";
+    ldkWSP.custom_powered_by_utms = "";
+    ldkWSP.googleAnalyticsId = "";
+    ldkWSP.plan_type = "CLIENGO_FULL";
+    ldkWSP.type = "EXTERNAL";
+    ldkWSP.redirectToWPLite = false;
+    ldkWSP.website_id = "5ebc06bb43058900282081a4";
+    ldkWSP.show_desktop = true;
+    ldkWSP.show_mobile = true;
+    ldkWSP.labs = {
+          };
+    ldkWSP.notice = {
+    "title": "Para comunicarte con un asesor necesitamos los siguientes datos",
+    "type": "text"
+};
+    ldkWSP.name_request_message = {
+    "title": "Nombre",
+    "type": "text"
+};
+    ldkWSP.whats_app_request_message = {
+    "title": "N\u00ba de WhatsApp",
+    "type": "text"
+};
+    ldkWSP.message_request_message = {
+    "title": "Mensaje",
+    "type": "text"
+};
+    ldkWSP.requestMessages = [
+    {
+        "title": "Mensaje",
+        "type": "text"
+    }
+];
+
+    ldkWSP.snippetsCampaigns = [];
+  }
+
+function loadWhatsAppWidget() {
+      setwhatsappConfig();
+    var wspHost = 'https://wb.cliengo.com';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.id = mainWspScriptId;
+    s.src = wspHost + '/dist/js/mainWsp.js';
+    s.setAttribute('data-company-id', '5ebc06932e86cb002aca9ed6');
+    s.setAttribute('data-source-id', '5ebc06bb43058900282081a4');
+    s.setAttribute('data-host', wspHost);
+    s.async = true;
+    document.body.appendChild(s);
+  }
+
+

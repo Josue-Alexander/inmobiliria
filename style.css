@@ -14,7 +14,7 @@ Version: 1.2
 :root {
   --accent-color: #2C7865;
   /* --secondary-color: #E2EAF1; */
-  --dark-color: #EAE7DC;
+  --dark-color: #ffffff;
   --grey-color: #83898F;
   --body-text-color: #191919;
   --light-text-color: #191919;
@@ -366,7 +366,6 @@ button.btn.btn-primary.btn-lg.billboard-search {
 }
 
 section#residence {
-  background-image: url(images/residence.png);
   position: relative;
 }
 
@@ -442,7 +441,7 @@ p.testimonial-p {
 
 /*---- footer section start ----  */
 section#footer {
-  background: #f6cb5e;
+  background: #ffffff;
 }
 
 .link-primary {
